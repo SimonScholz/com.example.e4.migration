@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: E4_migrated
+Bundle-SymbolicName: com.example.e4_migrated;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: EXAMPLE
+Require-Bundle: org.eclipse.e4.ui.model.workbench,
+ javax.annotation,
+ javax.inject,
+ org.eclipse.e4.ui.di,
+ org.eclipse.equinox.registry,
+ org.eclipse.e4.core.di,
+ org.eclipse.jface
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
