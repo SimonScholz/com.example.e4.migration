@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Sample View"
+            icon="icons/sample.gif"
+            class="com.example.migrate_e4.views.SampleView"
+            id="com.example.migrate_e4.views.SampleView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="right"
+               id="com.example.migrate_e4.views.SampleView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:org.eclipse.jdt.ui.source.menu?after=additions">
+         <command
+               commandId="com.example.3xversion.appearInSourcemenu"
+               label="My E 3.x Source menuContribution"
+               mode="FORCE_TEXT"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="com.example.3xversion.appearInSourcemenu"
+            name="E 3.x Command appears in Sourcemenu">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.example.migrate_e4.handlers.SourceMenuHandler"
+            commandId="com.example.3xversion.appearInSourcemenu">
+      </handler>
+   </extension>
+
+</plugin>
